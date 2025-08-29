@@ -1,4 +1,4 @@
-# Zendesk Ticket Processing Tools ()
+# Zendesk Ticket Processing Tools
 
  Python tools for processing and generating Zendesk-style support tickets with AI classification using Ollama.
 
