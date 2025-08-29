@@ -1,0 +1,19 @@
+# Zendesk Ticket Processing Tools - Dependencies
+# Core data processing
+pandas>=2.0.0
+
+# Async HTTP client for Ollama communication  
+aiohttp>=3.8.0
+
+# Progress bars for better UX
+tqdm>=4.65.0
+
+# Optional: for enhanced text processing (if needed)
+# nltk>=3.8.0
+# spacy>=3.5.0
+
+# Development/Testing dependencies (optional)
+# pytest>=7.0.0
+# pytest-asyncio>=0.21.0
+# black>=23.0.0
+# mypy>=1.0.0
