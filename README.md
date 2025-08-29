@@ -1,29 +1,11 @@
-# Zendesk Ticket Processing Tools (Optimized)
+# Zendesk Ticket Processing Tools ()
 
-Optimized Python tools for processing and generating Zendesk-style support tickets with AI classification using Ollama.
+ Python tools for processing and generating Zendesk-style support tickets with AI classification using Ollama.
 
-## Features
+## ✨ Vibe Coded with Claude Code
 
-### 🚀 Performance Improvements
-- **Async processing** with concurrent Ollama requests
-- **Batch processing** for improved throughput
-- **Caching system** for repeated classifications
-- **Memory efficient** streaming for large datasets
-- **Progress tracking** with visual indicators
-
-### 🛠️ Architecture Improvements
-- **Modular design** with shared utilities
-- **Configuration management** via JSON files and environment variables
-- **Better error handling** with custom exceptions
-- **Comprehensive logging** with configurable levels
-- **Type hints** throughout the codebase
-
-### 📊 Enhanced Functionality
-- **Confidence thresholds** for classification quality
-- **Text preprocessing** with normalization
-- **Response validation** for Ollama outputs
-- **Fallback mechanisms** for failed requests
-- **Performance monitoring** with execution timing
+> ⚠️ **Disclaimer:** I'm not a developer and haven't had the chance to test this properly.  
+> Still, it might be useful to you too! 🙌
 
 ## Installation
 
@@ -48,34 +30,34 @@ ollama pull mistral:7b
 
 Basic usage with heuristics only:
 ```bash
-python3 zendesk_classifier_optimized.py tickets.json --out results.csv
+python3 zendesk_ai_classifier.py tickets.json --out results.csv
 ```
 
 With Ollama fallback for unclassified tickets:
 ```bash
-python3 zendesk_classifier_optimized.py tickets.json --out results.csv --ollama --model mistral:7b
+python3 zendesk_ai_classifier.py tickets.json --out results.csv --ollama --model mistral:7b
 ```
 
 Force Ollama for all tickets:
 ```bash
-python3 zendesk_classifier_optimized.py tickets.json --out results.csv --ollama-for-all --model mistral:7b
+python3 zendesk_ai_classifier.py tickets.json --out results.csv --ollama-for-all --model mistral:7b
 ```
 
 With custom configuration:
 ```bash
-python3 zendesk_classifier_optimized.py tickets.json --config config.json --verbose --batch-size 20
+python3 zendesk_ai_classifier.py tickets.json --config config.json --verbose --batch-size 20
 ```
 
 ### Synthetic Data Generation
 
 Generate 100 synthetic tickets:
 ```bash
-python3 zendesk_synthesizer_optimized.py example_ticket.json --n 100 --out synthetic_tickets.json
+python3 zendesk_synthesizer.py example_ticket.json --n 100 --out synthetic_tickets.json
 ```
 
 With custom categories and model:
 ```bash
-python3 zendesk_synthesizer_optimized.py example_ticket.json --n 50 --categories "Login,Billing,Bug" --model llama2:7b --verbose
+python3 zendesk_synthesizer.py example_ticket.json --n 50 --categories "Login,Billing,Bug" --model llama2:7b --verbose
 ```
 
 ## Configuration
@@ -94,7 +76,7 @@ Create a `config.json` file for persistent configuration:
   "classifier": {
     "confidence_threshold": 0.7,
     "text_truncate_length": 220,
-    "batch_size": 10,
+    "batch_size": 1,
     "enable_caching": true,
     "cache_size": 128
   },
@@ -165,16 +147,6 @@ The classifier outputs CSV with these columns:
 - `source`: Classification source/reason
 - `confidence`: Ollama confidence score (if available)
 
-## Performance Comparison
-
-| Metric | Original | Optimized | Improvement |
-|--------|----------|-----------|-------------|
-| Processing Speed | ~2 tickets/sec | ~15 tickets/sec | **7.5x faster** |
-| Memory Usage | High (full load) | Low (streaming) | **60% reduction** |
-| Concurrent Requests | 1 | 10 (configurable) | **10x parallelism** |
-| Error Recovery | Basic | Advanced retry logic | **More robust** |
-| Progress Tracking | None | Visual progress bars | **Better UX** |
-
 ## Categories
 
 Default Italian categories for classification:
@@ -201,16 +173,16 @@ config.py                 # Configuration management
 ├── SynthesizerConfig    # Generation parameters
 └── AppConfig           # Main application config
 
-zendesk_classifier_optimized.py  # Optimized classifier
-└── OptimizedTicketClassifier    # Main classification logic
+zendesk_ai_classifier.py  #  classifier
+└── TicketClassifier    # Main classification logic
 
-zendesk_synthesizer_optimized.py # Optimized synthesizer
-└── OptimizedTicketSynthesizer   # Main generation logic
+zendesk_synthesizer.py #  synthesizer
+└── TicketSynthesizer   # Main generation logic
 ```
 
 ## Error Handling
 
-The optimized scripts include comprehensive error handling:
+The scripts include comprehensive error handling:
 
 - **Connection errors**: Automatic retry with exponential backoff
 - **JSON parsing errors**: Graceful fallback to alternative formats
